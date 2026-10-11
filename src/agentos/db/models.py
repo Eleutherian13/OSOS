@@ -9,11 +9,12 @@ from __future__ import annotations
 
 import uuid
 from datetime import datetime, timezone
-from typing import Annotated, Any
+from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, Field, model_validator
 
 from .errors import EventDuplicateError, EventValidationError
+from decimal import Decimal
 
 DEFAULT_PAYLOAD_SCHEMA = "1.0"
 
@@ -40,7 +41,7 @@ class Event(BaseModel):
     """
 
     id: Annotated[uuid.UUID | None, Field(default=None)] = None
-    occurred_at: Annotated[datetime, Field(default_factory=_utc_now)] = ...
+    occurred_at: Annotated[datetime, Field(default_factory=lambda: datetime.now(timezone.utc))] = ...
     aggregate_type: Annotated[str, Field(min_length=1, max_length=63)] = ...
     aggregate_id: Annotated[uuid.UUID, Field(...)] = ...
     event_type: Annotated[str, Field(min_length=1, max_length=127)] = ...
@@ -48,10 +49,6 @@ class Event(BaseModel):
     payload_schema: Annotated[str, Field(min_length=1, max_length=63)] = DEFAULT_PAYLOAD_SCHEMA
     version: Annotated[int | None, Field(default=None, ge=0)] = None
     source: Annotated[str | None, Field(default=None, max_length=63)] = None
-
-    @classmethod
-    def _utc_now(cls) -> datetime:
-        return datetime.now(timezone.utc)
 
     @model_validator(mode="before")
     @classmethod
@@ -88,3 +85,20 @@ class Event(BaseModel):
 def event_from_dict(data: dict[str, Any]) -> Event:
     """Construct a validated ``Event`` from a plain dictionary."""
     return Event.model_validate(data)
+
+class Evidence(BaseModel):
+    id: uuid.UUID = Field(default_factory=uuid.uuid4)
+    path_id: uuid.UUID
+    claim: str = Field(min_length=1)
+    artifact_url: str = Field(min_length=1)
+    kind: Literal['fix','test_infra','design','review','community']
+    depth: int = Field(ge=1, le=5)
+    relevance_to_project: Decimal = Field(ge=Decimal('0'), le=Decimal('1'))
+    project_specificity: Decimal = Field(ge=Decimal('0'), le=Decimal('1'))
+    independence: int = Field(ge=1, le=5)
+    maintainer_signal: Decimal = Field(ge=Decimal('-1'), le=Decimal('1'))
+    mentor_validated: bool = False
+    understood: bool = False
+    interaction_id: uuid.UUID | None = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))

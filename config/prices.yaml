@@ -1,0 +1,8 @@
+version: "1.0"
+# Price basis: USD per 1K tokens (input / output / cached)
+# Entries validated at load: numeric, non-negative, supported provider/alias keys only.
+models:
+  default:
+    input_per_1k: 0.005
+    output_per_1k: 0.015
+    cached_input_per_1k: 0.0025

@@ -9,7 +9,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-import psycopg
+try:
+    import psycopg
+except ImportError:
+    psycopg = None  # type: ignore[misc,assignment]
 
 from .config import DatabaseConfig, _parse_dsn
 from .connection import Connection, _message_from_error
@@ -40,22 +43,40 @@ def is_healthy(config: DatabaseConfig, migrations_applied: bool = True) -> Healt
     try:
         with Connection(config) as connection:
             connection.execute("select 1 as healthy")
-            result = connection.fetchone()
+            result = connection.fetchone("select 1 as healthy")
             if result is None or result.get("healthy") != 1:
                 return HealthResult(healthy=False, error="database returned unexpected result")
             if migrations_applied:
-                connection.execute(
-                    "select exists(select 1 from information_schema.tables "
-                    "where table_schema = 'public' and table_name = 'event_store') as has_table"
-                )
-                row = connection.fetchone()
-                if not row or not row.get("has_table"):
-                    return HealthResult(
-                        healthy=False,
-                        error="event store schema not present; run database migrations first",
+                if config.dsn.startswith("sqlite:///"):
+                    connection.execute(
+                        "select count(*) as cnt from sqlite_master "
+                        "where type='table' and name='event_store'"
                     )
+                    row = connection.fetchone(
+                        "select count(*) as cnt from sqlite_master "
+                        "where type='table' and name='event_store'"
+                    )
+                    if not row or row.get("cnt", 0) == 0:
+                        return HealthResult(
+                            healthy=False,
+                            error="event store schema not present; run database migrations first",
+                        )
+                else:
+                    connection.execute(
+                        "select exists(select 1 from information_schema.tables "
+                        "where table_schema = 'public' and table_name = 'event_store') as has_table"
+                    )
+                    row = connection.fetchone(
+                        "select exists(select 1 from information_schema.tables "
+                        "where table_schema = 'public' and table_name = 'event_store') as has_table"
+                    )
+                    if not row or not row.get("has_table"):
+                        return HealthResult(
+                            healthy=False,
+                            error="event store schema not present; run database migrations first",
+                        )
     except DatabaseConnectionError as exc:
         return HealthResult(healthy=False, error=f"connection failed: {exc}")
-    except psycopg.Error as exc:
+    except Exception as exc:
         return HealthResult(healthy=False, error=_message_from_error(exc))
     return HealthResult(healthy=True, error=None)

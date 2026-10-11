@@ -1,0 +1,621 @@
+{
+  "S01": {
+    "repo": "sigstore/sigstore-python",
+    "branch": "main",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "Contributing to sigstore ======================== Thank you for your interest in contributing to `sigstore`!",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "<!--- @begin-badges@ --->",
+      "<!--- @end-badges@ --->",
+      "<!-- @begin-sigstore-help@ -->",
+      "<!-- @end-sigstore-help@ -->",
+      "<!-- @begin-sigstore-sign-help@ -->"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 15,
+    "issue_count": 0,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 1936,
+        "title": "build(deps): bump pyjwt from 2.15.0 to 2.15.1",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1936",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1935,
+        "title": "build(deps): bump platformdirs from 4.11.12 to 4.12.2",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1935",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1934,
+        "title": "build(deps-dev): bump uv from 0.12.18 to 0.12.21",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1934",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1933,
+        "title": "build(deps): bump cryptography from 50.0.1 to 50.0.2",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1933",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1932,
+        "title": "fix: recognize Ed25519 checkpoint signatures by their C2SP key IDs",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1932",
+        "created": "2026-10-07",
+        "state": "closed",
+        "author": "Varshith-Kali",
+        "comments": 0
+      }
+    ],
+    "issues_with_comments": []
+  },
+  "S05": {
+    "repo": "tektoncd/cli",
+    "branch": "main",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "# Contributing to Tekton Pipelines cli Welcome to the Tekton Pipelines project! Thanks for considering contributing to our project and we hope you'll enjoy it :D",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "- [Contacting other contributors](https://github.com/tektoncd/community/blob/master/contact.md)",
+      "you would be able to use [@chmouel](https://github.com/chmouel)'s unofficial copr package"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 14,
+    "issue_count": 1,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 3335,
+        "title": "[cherry-pick: release-v0.37.x] fix: use latest Tekton releases and fix ConfigMap timing is",
+        "url": "https://github.com/tektoncd/cli/pull/3335",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "divyansh42",
+        "comments": 2
+      },
+      {
+        "type": "PR",
+        "number": 3334,
+        "title": "feat: support structured JSON/YAML output for bulk delete operations",
+        "url": "https://github.com/tektoncd/cli/pull/3334",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "arvindk-softwaredev",
+        "comments": 6
+      },
+      {
+        "type": "PR",
+        "number": 3333,
+        "title": "chore(deps): bump goa.design/goa/v3 from 3.30.0 to 3.32.0",
+        "url": "https://github.com/tektoncd/cli/pull/3333",
+        "created": "2026-10-06",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 6
+      },
+      {
+        "type": "PR",
+        "number": 3332,
+        "title": "[release-v0.45.x] Security: Fix CVE-2026-84304 (gRPC-Go)",
+        "url": "https://github.com/tektoncd/cli/pull/3332",
+        "created": "2026-10-06",
+        "state": "closed",
+        "author": "divyansh42",
+        "comments": 2
+      },
+      {
+        "type": "PR",
+        "number": 3331,
+        "title": "[release-v0.46.x] Security: Fix CVE-2026-84304 (gRPC-Go)",
+        "url": "https://github.com/tektoncd/cli/pull/3331",
+        "created": "2026-10-06",
+        "state": "closed",
+        "author": "divyansh42",
+        "comments": 2
+      }
+    ],
+    "issues_with_comments": []
+  },
+  "S06": {
+    "repo": "tektoncd/chains",
+    "branch": "main",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "# Contributing to Tekton Chains Welcome to the Tekton Chains project! Thanks for considering contributing to our project and we hope you'll enjoy it :D",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "- [Contacting other contributors](https://github.com/tektoncd/community/blob/master/contact.md)",
+      "- Chat with us in the [#chains](https://tektoncd.slack.com/messages/chains)",
+      "Slack channel"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 14,
+    "issue_count": 1,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 2045,
+        "title": "chore(deps): bump google.golang.org/grpc from 1.83.1 to 1.83.2",
+        "url": "https://github.com/tektoncd/chains/pull/2045",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 1
+      },
+      {
+        "type": "PR",
+        "number": 2044,
+        "title": "fix(storage): use MessageSignature for OCI signature bundles",
+        "url": "https://github.com/tektoncd/chains/pull/2044",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "anithapriyanatarajan",
+        "comments": 2
+      },
+      {
+        "type": "PR",
+        "number": 2043,
+        "title": "chore(deps): bump google.golang.org/grpc from 1.83.1 to 1.83.2",
+        "url": "https://github.com/tektoncd/chains/pull/2043",
+        "created": "2026-10-08",
+        "state": "closed",
+        "author": "dependabot[bot]",
+        "comments": 1
+      },
+      {
+        "type": "PR",
+        "number": 2042,
+        "title": "chore(deps): bump cloud.google.com/go/storage from 1.68.0 to 1.69.0",
+        "url": "https://github.com/tektoncd/chains/pull/2042",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "dependabot[bot]",
+        "comments": 4
+      },
+      {
+        "type": "PR",
+        "number": 2041,
+        "title": "byProduct name change in SLSA provenance",
+        "url": "https://github.com/tektoncd/chains/pull/2041",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "ngelman1",
+        "comments": 2
+      }
+    ],
+    "issues_with_comments": [
+      {
+        "type": "ISSUE",
+        "number": 2036,
+        "title": "simplesigning + sigstore-bundle + transparency creates unverifiable signatures",
+        "url": "https://github.com/tektoncd/chains/issues/2036",
+        "created": "2026-10-07",
+        "state": "open",
+        "author": "infernus01",
+        "comments": 1
+      }
+    ]
+  },
+  "S07": {
+    "repo": "prometheus/client_python",
+    "branch": "master",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "# Contributing Prometheus uses GitHub to manage reviews of pull requests. * If you have a trivial fix or improvement, go ahead and create a pull request,",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "addressing (with `@...`) the maintainer of this repository (see",
+      "[our mailing list]. This will avoid unnecessary work and surely give you and",
+      "[our mailing list]: https://groups.google.com/forum/?fromgroups#!forum/prometheus-developers"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 12,
+    "issue_count": 3,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 1219,
+        "title": "Make mostrecent gauge tests independent of clock resolution",
+        "url": "https://github.com/prometheus/client_python/pull/1219",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "nischita44",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1218,
+        "title": "Allow make_asgi_app to be added as a Starlette/FastAPI route",
+        "url": "https://github.com/prometheus/client_python/pull/1218",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "bhaskargurram-ai",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1217,
+        "title": "Reject duplicate label names before metric registration",
+        "url": "https://github.com/prometheus/client_python/pull/1217",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "fhgffy",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 1216,
+        "title": "Avoid parent lock for existing metric labelsets",
+        "url": "https://github.com/prometheus/client_python/pull/1216",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "skulitom",
+        "comments": 0
+      },
+      {
+        "type": "ISSUE",
+        "number": 1215,
+        "title": "Optimize labels() existing-child lookups to avoid parent lock contention",
+        "url": "https://github.com/prometheus/client_python/issues/1215",
+        "created": "2026-10-08",
+        "state": "open",
+        "author": "baruch321-code",
+        "comments": 0
+      }
+    ],
+    "issues_with_comments": []
+  },
+  "S08": {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "HTTP 404",
+    "contributing_github": "VERIFIED",
+    "contributing_github_sample": "# Contributing to vLLM You may find information about contributing to vLLM on [docs.vllm.ai](https://docs.vllm.ai/en/latest/contributing).",
+    "ai_policy_scan": "OBSERVED_KEYWORDS",
+    "ai_policy_hits": [
+      "# Contributing to vLLM",
+      "You may find information about contributing to vLLM on [docs.vllm.ai](https://docs.vllm.ai/en/latest",
+      "<source media=\"(prefers-color-scheme: dark)\" srcset=\"https://raw.githubusercontent.com/vllm-project/",
+      "<img alt=\"vLLM\" src=\"https://raw.githubusercontent.com/vllm-project/vllm/main/docs/assets/logos/vllm",
+      "Easy, fast, and cheap LLM serving for everyone"
+    ],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "| <a href=\"https://docs.vllm.ai\"><b>Documentation</b></a> | <a href=\"https://blog.vllm.ai/\"><b>Blog<",
+      "@inproceedings{kwon2023efficient,",
+      "## Contact Us",
+      "<!-- --8<-- [start:contact-us] -->",
+      "- For discussing with fellow users, please use the [vLLM Forum](https://discuss.vllm.ai)"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 11,
+    "issue_count": 4,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 60973,
+        "title": "[Bugfix][Responses API] Complete cache-write token accounting",
+        "url": "https://github.com/vllm-project/vllm/pull/60973",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "yankay",
+        "comments": 1
+      },
+      {
+        "type": "PR",
+        "number": 60972,
+        "title": "[Misc] Break chat_utils into more maintainable modules.",
+        "url": "https://github.com/vllm-project/vllm/pull/60972",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "noooop",
+        "comments": 0
+      },
+      {
+        "type": "ISSUE",
+        "number": 60971,
+        "title": "[Bug]: --enable-log-outputs is ignored by the Anthropic /v1/messages endpoint",
+        "url": "https://github.com/vllm-project/vllm/issues/60971",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "mjzcng",
+        "comments": 0
+      },
+      {
+        "type": "ISSUE",
+        "number": 60970,
+        "title": "[Bug]: Qwen3-ASR with Rust frontend — EngineCore dies when a scheduler step batches unequa",
+        "url": "https://github.com/vllm-project/vllm/issues/60970",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "noone-zhhh",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 60969,
+        "title": "[Bugfix][Reasoning] Return unfinished K2 Horizon reasoning as reasoning",
+        "url": "https://github.com/vllm-project/vllm/pull/60969",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "hpdkhoa",
+        "comments": 1
+      }
+    ],
+    "issues_with_comments": []
+  },
+  "S09": {
+    "repo": "kyverno/chainsaw",
+    "branch": "main",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "HTTP 404",
+    "contributing_github": "HTTP 404",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "Built under the Kyverno umbrella, you can use the Kyverno Chainsaw **Slack channels** to discuss any",
+      "### Slack channels",
+      "- [#kyverno-chainsaw](https://kubernetes.slack.com/archives/C067LUFL43U)",
+      "This forum allows community members to raise agenda items of any sort, including but not limited to "
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 12,
+    "issue_count": 3,
+    "sample_items": [
+      {
+        "type": "ISSUE",
+        "number": 2772,
+        "title": "[Feature] Poll command and script checks until they pass",
+        "url": "https://github.com/kyverno/chainsaw/issues/2772",
+        "created": "2026-10-05",
+        "state": "open",
+        "author": "komer3",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 2771,
+        "title": "docs: clarify patch merge semantics",
+        "url": "https://github.com/kyverno/chainsaw/pull/2771",
+        "created": "2026-09-18",
+        "state": "open",
+        "author": "ANAMASGARD",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 2770,
+        "title": "fix(operations): parse script/command stdout for declarative check/assert",
+        "url": "https://github.com/kyverno/chainsaw/pull/2770",
+        "created": "2026-09-16",
+        "state": "open",
+        "author": "ivomarino",
+        "comments": 0
+      },
+      {
+        "type": "PR",
+        "number": 2769,
+        "title": "feat(expressions): support $name shorthand for bindings.resolve() in CEL",
+        "url": "https://github.com/kyverno/chainsaw/pull/2769",
+        "created": "2026-09-15",
+        "state": "open",
+        "author": "ivomarino",
+        "comments": 1
+      },
+      {
+        "type": "PR",
+        "number": 2768,
+        "title": "fix: set classname to the test name in JUnit reports",
+        "url": "https://github.com/kyverno/chainsaw/pull/2768",
+        "created": "2026-09-14",
+        "state": "open",
+        "author": "ivomarino",
+        "comments": 0
+      }
+    ],
+    "issues_with_comments": [
+      {
+        "type": "ISSUE",
+        "number": 2764,
+        "title": "[Bug] Native Pod `patch` uses undocumented JSON Merge Patch semantics",
+        "url": "https://github.com/kyverno/chainsaw/issues/2764",
+        "created": "2026-08-14",
+        "state": "open",
+        "author": "SanderSimson",
+        "comments": 3
+      }
+    ]
+  },
+  "S11": {
+    "repo": "mlflow/mlflow",
+    "branch": "master",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "# Contributing to MLflow We welcome community contributions to MLflow. This page provides useful information about contributing to MLflow. **Table of Contents**",
+    "ai_policy_scan": "OBSERVED_KEYWORDS",
+    "ai_policy_hits": [
+      "**Note:** On some versions of MacOS, the \"Airplay Receiver\" process runs on port 5000 by default,",
+      "<h2 align=\"center\" style=\"border-bottom: none\">The Open Source AI Engineering Platform for Agents, L",
+      "MLflow is the largest open source **AI engineering platform for agents, LLMs, and ML models**. MLflo",
+      "[evaluate](https://mlflow.org/llm-evaluation), [monitor](https://mlflow.org/ai-monitoring), and [opt",
+      "thousands of organizations rely on MLflow each day to ship AI to production with confidence."
+    ],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "- Patrick Wendell (<pwendell@gmail.com>)",
+      "- Reynold Xin (<reynoldx@gmail.com>)",
+      "- Matei Zaharia (<matei@cs.stanford.edu>)",
+      "annotation `@developer_stable` must remain backwards compatible. Any contribution",
+      "git clone --recurse-submodules git@github.com:<username>/mlflow.git"
+    ],
+    "issues_retrieved": 15,
+    "issues_inspected": 15,
+    "pr_count": 11,
+    "issue_count": 4,
+    "sample_items": [
+      {
+        "type": "PR",
+        "number": 26614,
+        "title": "Prevent online scoring from exhausting the server job queue",
+        "url": "https://github.com/mlflow/mlflow/pull/26614",
+        "created": "2026-10-10",
+        "state": "open",
+        "author": "Copilot",
+        "comments": 1
+      },
+      {
+        "type": "PR",
+        "number": 26613,
+        "title": "docs: fix `trace` import in the lightweight tracing SDK guide",
+        "url": "https://github.com/mlflow/mlflow/pull/26613",
+        "created": "2026-10-10",
+        "state": "closed",
+        "author": "shaikn6",
+        "comments": 2
+      },
+      {
+        "type": "PR",
+        "number": 26612,
+        "title": "docs: fix trace import in the lightweight tracing SDK guide",
+        "url": "https://github.com/mlflow/mlflow/pull/26612",
+        "created": "2026-10-10",
+        "state": "closed",
+        "author": "shaikn6",
+        "comments": 3
+      },
+      {
+        "type": "ISSUE",
+        "number": 26611,
+        "title": "[BUG] `mlflow.strands.autolog()` exports every span twice when `MLFLOW_USE_DEFAULT_TRACER_",
+        "url": "https://github.com/mlflow/mlflow/issues/26611",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "LeviLong01",
+        "comments": 2
+      },
+      {
+        "type": "PR",
+        "number": 26610,
+        "title": "Skill registry: cover latest-version errors and default status in the SDK tests",
+        "url": "https://github.com/mlflow/mlflow/pull/26610",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "hmoghani",
+        "comments": 1
+      }
+    ],
+    "issues_with_comments": [
+      {
+        "type": "ISSUE",
+        "number": 26611,
+        "title": "[BUG] `mlflow.strands.autolog()` exports every span twice when `MLFLOW_USE_DEFAULT_TRACER_",
+        "url": "https://github.com/mlflow/mlflow/issues/26611",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "LeviLong01",
+        "comments": 2
+      },
+      {
+        "type": "ISSUE",
+        "number": 26607,
+        "title": "[FR] Support Amazon Bedrock guardrails in the AI Gateway Bedrock provider",
+        "url": "https://github.com/mlflow/mlflow/issues/26607",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "hyebae",
+        "comments": 3
+      },
+      {
+        "type": "ISSUE",
+        "number": 26605,
+        "title": "[BUG] Async logging (`synchronous=False`) applies writes for the same run out of order",
+        "url": "https://github.com/mlflow/mlflow/issues/26605",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "maharanay22",
+        "comments": 1
+      },
+      {
+        "type": "ISSUE",
+        "number": 26604,
+        "title": "[BUG] Array(datetime) signature converts datetime lists to integers during prediction",
+        "url": "https://github.com/mlflow/mlflow/issues/26604",
+        "created": "2026-10-09",
+        "state": "open",
+        "author": "aswanth-07",
+        "comments": 3
+      }
+    ]
+  },
+  "S12": {
+    "repo": "kubernetes/client-go",
+    "branch": "master",
+    "access": "2026-10-10 07:44:14Z",
+    "readme_status": "VERIFIED",
+    "contributing_root": "VERIFIED",
+    "contributing_github": "HTTP 404",
+    "contributing_root_sample": "# Contributing guidelines Do not open pull requests directly against kubernetes/client-go repository (except for README.md); they will be ignored. Instead, please open pull requests and issues against",
+    "ai_policy_scan": "NOT_FOUND_IN_FETCHED_DOCS",
+    "ai_policy_hits": [],
+    "contact_scan": "OBSERVED",
+    "contact_hits": [
+      "The fastest way to add this library to a project is to run `go get k8s.io/client-go@latest` with go1",
+      "go get k8s.io/client-go@latest",
+      "go get k8s.io/client-go@v0.20.4"
+    ],
+    "issues_retrieved": 0,
+    "issues_inspected": 0,
+    "issue_api_error": null,
+    "sample_items": []
+  }
+}

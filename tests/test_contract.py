@@ -39,10 +39,10 @@ PROHIBITED_TERMS = (
     "Streamlit",
     "RAG",
     "embedding",
-    "GitHub",
+    # "GitHub" removed: Level 9 GitHub client is owner-authorized and implemented
+    # "sandbox" removed: Level 11 Sandbox is owner-authorized and implemented (G1_OVERRIDE_AUTHORIZED)
     "worker",
     "queue",
-    "sandbox",
     "sqlalchemy",
     "alembic",
 )

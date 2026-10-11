@@ -1,0 +1,54 @@
+{
+  "S06": {
+    "url": "https://github.com/tektoncd/chains",
+    "status": 200,
+    "found": {
+      "#chains": true,
+      "Chains Working Group": true
+    },
+    "quotes": [
+      "\"#chains\" observed: .../tektoncd.slack.com/messages/chains\\\" rel=\\\"nofollow\\\"\\u003e#chains\\u003c/a\\u003e\\nSlack channel\\u003c/li\\u003e\\n\\u003cli\\u003e...",
+      "\"Chains Working Group\" observed: ...03e\\nSlack channel\\u003c/li\\u003e\\n\\u003cli\\u003eAttend the Chains Working Group meeting, details\\n\\u003ca href=\\\"https://github.com/tektonc..."
+    ]
+  },
+  "S09": {
+    "url": "https://github.com/kyverno/chainsaw",
+    "status": 200,
+    "found": {
+      "#kyverno-chainsaw": true,
+      "community meeting": true,
+      "community meetings": true
+    },
+    "quotes": [
+      "\"#kyverno-chainsaw\" observed: ...etes.slack.com/archives/C067LUFL43U\\\" rel=\\\"nofollow\\\"\\u003e#kyverno-chainsaw\\u003c/a\\u003e\\u003c/li\\u003e\\n\\u003c/ul\\u003e\\n\\u003cdiv cl...",
+      "\"community meeting\" observed: ...com/watch?v=Ejof-wtAdQM\\\" rel=\\\"nofollow\\\"\\u003eKubebuilder Community Meeting - February 1, 2024\\u003c/a\\u003e\\u003c/li\\u003e\\n\\u003cli\\u...",
+      "\"community meetings\" observed: ...tabindex=\\\"-1\\\" class=\\\"heading-element\\\" dir=\\\"auto\\\"\\u003eCommunity Meetings\\u003c/h2\\u003e\\u003ca id=\\\"user-content-community-meetings\\..."
+    ]
+  },
+  "S11": {
+    "url": "https://github.com/mlflow/mlflow",
+    "status": 200,
+    "found": {
+      "GitHub issue": true,
+      "GitHub issue submission": false,
+      "Slack": true,
+      "mailing list": true
+    },
+    "quotes": [
+      "\"GitHub issue\" observed: ...://github.com/mlflow/mlflow/issues/new/choose\\\"\\u003eopen a GitHub issue\\u003c/a\\u003e.\\u003c/li\\u003e\\n\\u003cli\\u003eFor release an...",
+      "\"Slack\" observed: ...\\u003e)\\nor join us on \\u003ca href=\\\"https://go.mlflow.org/slack\\\" rel=\\\"nofollow\\\"\\u003eSlack\\u003c/a\\u003e.\\u003c/li\\u003e...",
+      "\"mailing list\" observed: ...nnouncements and other discussions, please subscribe to our mailing list (\\u003ca href=\\\"mailto:mlflow-users@googlegroups.com\\\"\\u003..."
+    ]
+  },
+  "S01": {
+    "url": "https://github.com/sigstore/sigstore-python",
+    "status": 200,
+    "found": {
+      "GitHub issues": false,
+      "Slack": true
+    },
+    "quotes": [
+      "\"Slack\" observed: ...003c/a\\u003e or ask in the \\u003ca href=\\\"#community\\\"\\u003eslack channel\\u003c/a\\u003e.\\u003c/p\\u003e\\n\\u003cdiv class=\\\"mar..."
+    ]
+  }
+}

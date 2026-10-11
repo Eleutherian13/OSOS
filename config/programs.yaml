@@ -1,0 +1,15 @@
+program: OSS-AgentOS v2.1
+version: "2.1"
+global_sources:
+  - id: gsoc-timeline
+    url: https://developers.google.com/season-of-docs/docs/timeline
+    category: GSoC_TIMELINE
+  - id: gsoc-rules
+    url: https://developers.google.com/season-of-docs/docs/rules
+    category: GSoC_RULES
+  - id: gsoc-ai-guidance
+    url: https://developers.google.com/season-of-docs/docs/ai-guidance
+    category: GSoC_AI_GUIDANCE
+  - id: lfx-docs
+    url: https://lfx.linuxfoundation.org/docs/
+    category: LFX_DOCS

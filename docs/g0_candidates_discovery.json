@@ -1,0 +1,597 @@
+{
+  "cncf": [
+    {
+      "org": "CNCF",
+      "name": "foundation",
+      "desc": "☁️♮🏛 This repo contains several documents related to the operation of the CNCF. ",
+      "url": "https://github.com/cncf/foundation",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "landscape",
+      "desc": "🌄 The Cloud Native Interactive Landscape filters and sorts hundreds of projects ",
+      "url": "https://github.com/cncf/landscape",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "tag-storage",
+      "desc": "🗄CNCF Storage TAG",
+      "url": "https://github.com/cncf/tag-storage",
+      "updated": "2026-05-13"
+    },
+    {
+      "org": "CNCF",
+      "name": "velocity",
+      "desc": "🚅Track development velocity",
+      "url": "https://github.com/cncf/velocity",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats.archive",
+      "desc": "📈CNCF-created tool for analyzing and graphing developer contributions",
+      "url": "https://github.com/cncf/devstats.archive",
+      "updated": "2026-08-11"
+    },
+    {
+      "org": "CNCF",
+      "name": "servicedesk",
+      "desc": "💁‍♀️💁‍♂️📥 Maintainers can get project-related help from the CNCF",
+      "url": "https://github.com/cncf/servicedesk",
+      "updated": "2026-08-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "dev-affiliations",
+      "desc": "📜Current list of developer affiliations, used by DevStats and gitdm",
+      "url": "https://github.com/cncf/dev-affiliations",
+      "updated": "2023-01-28"
+    },
+    {
+      "org": "CNCF",
+      "name": "contribute",
+      "desc": "🙋🏿‍♀️🙋🏽‍♂️🙋🏻‍♀️Contribution guide to the CNCF ecosystem",
+      "url": "https://github.com/cncf/contribute",
+      "updated": "2026-01-26"
+    },
+    {
+      "org": "CNCF",
+      "name": "tag-security",
+      "desc": "🔐CNCF Security Technical Advisory Group -- secure access, policy control, privac",
+      "url": "https://github.com/cncf/tag-security",
+      "updated": "2026-10-05"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-website",
+      "desc": "Website for devstats.cncf.io",
+      "url": "https://github.com/cncf/devstats-website",
+      "updated": "2023-01-28"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-example",
+      "desc": "📈Example DevStats deployment for single project - Homebrew",
+      "url": "https://github.com/cncf/devstats-example",
+      "updated": "2025-08-28"
+    },
+    {
+      "org": "CNCF",
+      "name": "trailmap",
+      "desc": "🗺TrailMap files from the cncf/landscape repo",
+      "url": "https://github.com/cncf/trailmap",
+      "updated": "2026-09-29"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstatscode",
+      "desc": "📈DevStats code",
+      "url": "https://github.com/cncf/devstatscode",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-helm-lf",
+      "desc": "📈DevStats Deployment on Kubernetes using Helm. This is a deployment for LF and C",
+      "url": "https://github.com/cncf/devstats-helm-lf",
+      "updated": "2025-05-13"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-docker-lf",
+      "desc": "📈DevStats deployment using docker and managed AuroraDB and ElasticSearch. Option",
+      "url": "https://github.com/cncf/devstats-docker-lf",
+      "updated": "2025-04-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-docker-images",
+      "desc": "📈DevStats docker images: minimal (hourly cron job sync), full (provisioning/boot",
+      "url": "https://github.com/cncf/devstats-docker-images",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-k8s-lf",
+      "desc": "📈DevStats kubernetes deployment for LF projects (bare kubernetes, no Helm packag",
+      "url": "https://github.com/cncf/devstats-k8s-lf",
+      "updated": "2026-05-29"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-helm-example",
+      "desc": "📈DevStats example deployment using Helm",
+      "url": "https://github.com/cncf/devstats-helm-example",
+      "updated": "2023-04-27"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-reports",
+      "desc": "📈various reports generated from DevStats databases",
+      "url": "https://github.com/cncf/devstats-reports",
+      "updated": "2026-09-13"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-helm-graphql",
+      "desc": "📈DevStats deployement for the GraphQL foundation",
+      "url": "https://github.com/cncf/devstats-helm-graphql",
+      "updated": "2023-07-25"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-kubernetes-dashboard",
+      "desc": "📈Kubernetes dashboard for DevStats kubernetes deployment",
+      "url": "https://github.com/cncf/devstats-kubernetes-dashboard",
+      "updated": "2025-06-12"
+    },
+    {
+      "org": "CNCF",
+      "name": "devstats-helm",
+      "desc": "📈DevStats deployment on Kubernetes using Equinix servers and Helm, CoreDNS, cont",
+      "url": "https://github.com/cncf/devstats-helm",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "merge-sh-dbs",
+      "desc": "🔀🗄🎩Tool to merge Sorting Hat databases",
+      "url": "https://github.com/cncf/merge-sh-dbs",
+      "updated": "2025-09-27"
+    },
+    {
+      "org": "CNCF",
+      "name": "da-patroni",
+      "desc": "📈Patroni deployment on AWS+OpenEBS+local-storage-nfs",
+      "url": "https://github.com/cncf/da-patroni",
+      "updated": "2023-07-25"
+    },
+    {
+      "org": "CNCF",
+      "name": "y2c",
+      "desc": "🍠🇱2️⃣📅 Converts YAML in a public GitHub repo to Google Calendar entries",
+      "url": "https://github.com/cncf/y2c",
+      "updated": "2025-09-27"
+    },
+    {
+      "org": "CNCF",
+      "name": "svg-autocrop-serverless",
+      "desc": "🚗🌽🔳💁‍♀️🙅‍♀️💁‍♂️🙅‍♂️Serverless infrastructure for SVG Autocrop",
+      "url": "https://github.com/cncf/svg-autocrop-serverless",
+      "updated": "2025-02-23"
+    },
+    {
+      "org": "CNCF",
+      "name": "tag-contributor-strategy",
+      "desc": "CNCF Technical Advisory Group on Contributor Strategy -- maintainer relations, b",
+      "url": "https://github.com/cncf/tag-contributor-strategy",
+      "updated": "2026-10-07"
+    },
+    {
+      "org": "CNCF",
+      "name": "glossary",
+      "desc": "The CNCF Cloud Native Glossary Project aims to define cloud native concepts in c",
+      "url": "https://github.com/cncf/glossary",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "CNCF",
+      "name": "cartografos",
+      "desc": "The Cartografos working group aims to provide tools to help adopters and end-use",
+      "url": "https://github.com/cncf/cartografos",
+      "updated": "2026-08-28"
+    }
+  ],
+  "k8s": [
+    {
+      "org": "Kubernetes",
+      "name": "client-go",
+      "desc": "Go client for Kubernetes.",
+      "url": "https://github.com/kubernetes/client-go",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "Kubernetes",
+      "name": "cli-runtime",
+      "desc": "Set of helpers for creating kubectl commands and plugins.",
+      "url": "https://github.com/kubernetes/cli-runtime",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "Kubernetes",
+      "name": "sample-cli-plugin",
+      "desc": "Sample kubectl plugin",
+      "url": "https://github.com/kubernetes/sample-cli-plugin",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "Kubernetes",
+      "name": "cri-client",
+      "desc": "Container Runtime Interface client implementation",
+      "url": "https://github.com/kubernetes/cri-client",
+      "updated": "2026-10-10"
+    }
+  ],
+  "other": [
+    {
+      "org": "sigstore",
+      "name": "rekor",
+      "desc": "Software Supply Chain Transparency Log",
+      "url": "https://github.com/sigstore/rekor",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "sigstore",
+      "name": "cosign",
+      "desc": "Code signing and transparency for containers and binaries",
+      "url": "https://github.com/sigstore/cosign",
+      "updated": "2026-10-10"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore",
+      "desc": "Common go library shared across sigstore services and clients",
+      "url": "https://github.com/sigstore/sigstore",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "sigstore",
+      "name": "helm-sigstore",
+      "desc": "Plugin for Helm to integrate the sigstore ecosystem",
+      "url": "https://github.com/sigstore/helm-sigstore",
+      "updated": "2026-06-21"
+    },
+    {
+      "org": "sigstore",
+      "name": "k8s-manifest-sigstore",
+      "desc": "kubectl plugin for signing Kubernetes manifest YAML files with sigstore",
+      "url": "https://github.com/sigstore/k8s-manifest-sigstore",
+      "updated": "2026-09-11"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore-website",
+      "desc": "Codebase for sigstore.dev",
+      "url": "https://github.com/sigstore/sigstore-website",
+      "updated": "2026-09-24"
+    },
+    {
+      "org": "sigstore",
+      "name": "sget-rs",
+      "desc": "sget is a keyless safe script retrieval and execution tool",
+      "url": "https://github.com/sigstore/sget-rs",
+      "updated": "2023-01-28"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore-python",
+      "desc": "A Sigstore client written in Python",
+      "url": "https://github.com/sigstore/sigstore-python",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore-java",
+      "desc": "java clients for sigstore",
+      "url": "https://github.com/sigstore/sigstore-java",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "sigstore",
+      "name": "policy-controller",
+      "desc": "Sigstore Policy Controller -  an admission controller that can be used to enforc",
+      "url": "https://github.com/sigstore/policy-controller",
+      "updated": "2026-10-02"
+    },
+    {
+      "org": "sigstore",
+      "name": "gh-action-sigstore-python",
+      "desc": "A GitHub Action for sigstore-python",
+      "url": "https://github.com/sigstore/gh-action-sigstore-python",
+      "updated": "2026-10-08"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore-devops-tools",
+      "desc": "Tools & services used to help in the development flow of sigstore",
+      "url": "https://github.com/sigstore/sigstore-devops-tools",
+      "updated": "2026-06-29"
+    },
+    {
+      "org": "sigstore",
+      "name": "sigstore-conformance",
+      "desc": "Conformance testing for Sigstore clients",
+      "url": "https://github.com/sigstore/sigstore-conformance",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "kyverno",
+      "name": "policy-reporter",
+      "desc": "Monitoring and Observability Tool for the PolicyReport CRD with an optional UI.",
+      "url": "https://github.com/kyverno/policy-reporter",
+      "updated": "2026-10-08"
+    },
+    {
+      "org": "kyverno",
+      "name": "action-install-cli",
+      "desc": "GitHub Action to install Kyverno CLI",
+      "url": "https://github.com/kyverno/action-install-cli",
+      "updated": "2026-04-23"
+    },
+    {
+      "org": "kyverno",
+      "name": "chainsaw",
+      "desc": "Declarative K8s e2e testing",
+      "url": "https://github.com/kyverno/chainsaw",
+      "updated": "2026-10-03"
+    },
+    {
+      "org": "kyverno",
+      "name": "action-install-chainsaw",
+      "desc": "GitHub Action to install Chainsaw",
+      "url": "https://github.com/kyverno/action-install-chainsaw",
+      "updated": "2026-05-06"
+    },
+    {
+      "org": "kyverno",
+      "name": "reports-server",
+      "desc": "Alternate reports storage in Kubernetes outside etcd",
+      "url": "https://github.com/kyverno/reports-server",
+      "updated": "2026-09-03"
+    },
+    {
+      "org": "kyverno",
+      "name": "backstage-policy-reporter-plugin",
+      "desc": "The Backstage-policy-reporter-plugin integrates Policy Reporter with Backstage t",
+      "url": "https://github.com/kyverno/backstage-policy-reporter-plugin",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "kyverno",
+      "name": "test-ai-assistants",
+      "desc": "Test repo for AI and automation",
+      "url": "https://github.com/kyverno/test-ai-assistants",
+      "updated": "2026-10-05"
+    },
+    {
+      "org": "kyverno",
+      "name": "ai-assistant",
+      "desc": "AI Assistant for maintainers",
+      "url": "https://github.com/kyverno/ai-assistant",
+      "updated": "2026-10-07"
+    },
+    {
+      "org": "tektoncd",
+      "name": "plumbing",
+      "desc": "This repo holds configuration for infrastructure used across the tektoncd org 🏗️",
+      "url": "https://github.com/tektoncd/plumbing",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "tektoncd",
+      "name": "cli",
+      "desc": "A CLI for interacting with Tekton!",
+      "url": "https://github.com/tektoncd/cli",
+      "updated": "2026-10-08"
+    },
+    {
+      "org": "tektoncd",
+      "name": "homebrew-tools",
+      "desc": "Homebrew repo for the Tektoncd",
+      "url": "https://github.com/tektoncd/homebrew-tools",
+      "updated": "2026-09-21"
+    },
+    {
+      "org": "tektoncd",
+      "name": "hub",
+      "desc": "The tekton hub, official. This repository is archived and no longer maintained.",
+      "url": "https://github.com/tektoncd/hub",
+      "updated": "2026-09-09"
+    },
+    {
+      "org": "tektoncd",
+      "name": "chains",
+      "desc": "Supply Chain Security in Tekton Pipelines",
+      "url": "https://github.com/tektoncd/chains",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "tektoncd",
+      "name": "results",
+      "desc": "Long term storage of execution results.",
+      "url": "https://github.com/tektoncd/results",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "tektoncd",
+      "name": "catlin",
+      "desc": "Catlin is a command-line tool that Lints Tekton Resources and Catalogs.",
+      "url": "https://github.com/tektoncd/catlin",
+      "updated": "2026-09-09"
+    },
+    {
+      "org": "istio",
+      "name": "old_mixerclient_repo",
+      "desc": "Deprecated home of the C++ client library for Mixer's API, now in istio/proxy",
+      "url": "https://github.com/istio/old_mixerclient_repo",
+      "updated": "2023-12-19"
+    },
+    {
+      "org": "istio",
+      "name": "test-infra",
+      "desc": "",
+      "url": "https://github.com/istio/test-infra",
+      "updated": "2026-10-07"
+    },
+    {
+      "org": "istio",
+      "name": "tools",
+      "desc": "Tools shared by several Istio repositories",
+      "url": "https://github.com/istio/tools",
+      "updated": "2026-09-29"
+    },
+    {
+      "org": "istio",
+      "name": "old_vendor-istio_repo",
+      "desc": "(former) Vendored dependencies for the main istio repo",
+      "url": "https://github.com/istio/old_vendor-istio_repo",
+      "updated": "2023-01-28"
+    },
+    {
+      "org": "istio",
+      "name": "common-files",
+      "desc": "Contains build files shared by many Istio repos.",
+      "url": "https://github.com/istio/common-files",
+      "updated": "2026-09-28"
+    },
+    {
+      "org": "istio",
+      "name": "client-go",
+      "desc": "Go client libraries for the Istio API.",
+      "url": "https://github.com/istio/client-go",
+      "updated": "2026-09-28"
+    },
+    {
+      "org": "prometheus",
+      "name": "prometheus",
+      "desc": "The Prometheus monitoring system and time series database.",
+      "url": "https://github.com/prometheus/prometheus",
+      "updated": "2026-10-10"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_golang",
+      "desc": "Prometheus instrumentation library for Go applications",
+      "url": "https://github.com/prometheus/client_golang",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_java",
+      "desc": "Prometheus instrumentation library for JVM applications",
+      "url": "https://github.com/prometheus/client_java",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_ruby",
+      "desc": "Prometheus instrumentation library for Ruby applications",
+      "url": "https://github.com/prometheus/client_ruby",
+      "updated": "2026-09-29"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_model",
+      "desc": "Data model artifacts for Prometheus.",
+      "url": "https://github.com/prometheus/client_model",
+      "updated": "2026-08-31"
+    },
+    {
+      "org": "prometheus",
+      "name": "prom2json",
+      "desc": "A tool to scrape a Prometheus client and dump the result as JSON.",
+      "url": "https://github.com/prometheus/prom2json",
+      "updated": "2026-09-30"
+    },
+    {
+      "org": "prometheus",
+      "name": "procfs",
+      "desc": "procfs provides functions to retrieve system, kernel and process metrics from th",
+      "url": "https://github.com/prometheus/procfs",
+      "updated": "2026-10-08"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_python",
+      "desc": "Prometheus instrumentation library for Python applications",
+      "url": "https://github.com/prometheus/client_python",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_js",
+      "desc": "Prometheus client for node.js",
+      "url": "https://github.com/prometheus/client_js",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "prometheus",
+      "name": "promu",
+      "desc": "Prometheus Utility Tool",
+      "url": "https://github.com/prometheus/promu",
+      "updated": "2026-10-09"
+    },
+    {
+      "org": "prometheus",
+      "name": "test-infra",
+      "desc": "Prometheus E2E benchmarking tool",
+      "url": "https://github.com/prometheus/test-infra",
+      "updated": "2026-10-08"
+    },
+    {
+      "org": "prometheus",
+      "name": "prometheus_api_client_ruby",
+      "desc": "A Ruby library for reading metrics stored on a Prometheus server",
+      "url": "https://github.com/prometheus/prometheus_api_client_ruby",
+      "updated": "2026-08-27"
+    },
+    {
+      "org": "prometheus",
+      "name": "exporter-toolkit",
+      "desc": "Utility package to build exporters",
+      "url": "https://github.com/prometheus/exporter-toolkit",
+      "updated": "2026-10-03"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_rust",
+      "desc": "Prometheus / OpenMetrics client library in Rust",
+      "url": "https://github.com/prometheus/client_rust",
+      "updated": "2026-10-06"
+    },
+    {
+      "org": "prometheus",
+      "name": "promlens",
+      "desc": "PromLens – The query builder, analyzer, and explainer for PromQL",
+      "url": "https://github.com/prometheus/promlens",
+      "updated": "2026-09-14"
+    },
+    {
+      "org": "prometheus",
+      "name": "proposals",
+      "desc": "Design documents for Prometheus Ecosystem",
+      "url": "https://github.com/prometheus/proposals",
+      "updated": "2026-10-01"
+    },
+    {
+      "org": "prometheus",
+      "name": "client_java-benchmarks",
+      "desc": "",
+      "url": "https://github.com/prometheus/client_java-benchmarks",
+      "updated": "2026-08-27"
+    }
+  ],
+  "timestamp": "2026-10-10 11:32:06"
+}

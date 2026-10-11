@@ -1,0 +1,25 @@
+# Verified test command allowlist (stage B — design only)
+# Each entry requires explicit verification against project test suite;
+# unverified commands excluded; fail-closed if entry missing.
+# This file is the allowlist — not a command to run now.
+
+verified:
+  - id: pytest_target
+    cmd: pytest
+    scope: project test suite, bounded output
+    verified_against: existing pyproject.toml / pytest config (reused, not invented)
+  - id: ruff_check
+    cmd: ruff check src/
+    scope: lint only
+  - id: mypy_check
+    cmd: mypy src/
+    scope: type check only
+  - id: smoke_id
+    cmd: id
+    scope: unprivileged execution verification
+  - id: smoke_true
+    cmd: true
+    scope: minimal exit code verification
+
+fail_closed: TRUE
+no_unlisted_execution: TRUE

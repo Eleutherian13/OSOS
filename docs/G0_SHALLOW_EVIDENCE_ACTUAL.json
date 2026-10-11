@@ -1,0 +1,412 @@
+{
+  "S01": {
+    "repo": "sigstore/sigstore-python",
+    "issues_url": "https://github.com/sigstore/sigstore-python/issues",
+    "count_inspected": 15,
+    "pr_count": 15,
+    "issue_count": 0,
+    "sample_items": [
+      {
+        "number": 1936,
+        "title": "build(deps): bump pyjwt from 2.15.0 to 2.15.1",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1936",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 1935,
+        "title": "build(deps): bump platformdirs from 4.11.12 to 4.12.2",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1935",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 1934,
+        "title": "build(deps-dev): bump uv from 0.12.18 to 0.12.21",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1934",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 1933,
+        "title": "build(deps): bump cryptography from 50.0.1 to 50.0.2",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1933",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 1932,
+        "title": "fix: recognize Ed25519 checkpoint signatures by their C2SP key IDs",
+        "url": "https://github.com/sigstore/sigstore-python/pull/1932",
+        "date": "2026-10-07",
+        "state": "closed",
+        "type": "PR",
+        "author": "Varshith-Kali"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S05": {
+    "repo": "tektoncd/cli",
+    "issues_url": "https://github.com/tektoncd/cli/issues",
+    "count_inspected": 15,
+    "pr_count": 14,
+    "issue_count": 1,
+    "sample_items": [
+      {
+        "number": 3335,
+        "title": "[cherry-pick: release-v0.37.x] fix: use latest Tekton releases and fix ConfigMap timing is",
+        "url": "https://github.com/tektoncd/cli/pull/3335",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "divyansh42"
+      },
+      {
+        "number": 3334,
+        "title": "feat: support structured JSON/YAML output for bulk delete operations",
+        "url": "https://github.com/tektoncd/cli/pull/3334",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "arvindk-softwaredev"
+      },
+      {
+        "number": 3333,
+        "title": "chore(deps): bump goa.design/goa/v3 from 3.30.0 to 3.32.0",
+        "url": "https://github.com/tektoncd/cli/pull/3333",
+        "date": "2026-10-06",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 3332,
+        "title": "[release-v0.45.x] Security: Fix CVE-2026-84304 (gRPC-Go)",
+        "url": "https://github.com/tektoncd/cli/pull/3332",
+        "date": "2026-10-06",
+        "state": "closed",
+        "type": "PR",
+        "author": "divyansh42"
+      },
+      {
+        "number": 3331,
+        "title": "[release-v0.46.x] Security: Fix CVE-2026-84304 (gRPC-Go)",
+        "url": "https://github.com/tektoncd/cli/pull/3331",
+        "date": "2026-10-06",
+        "state": "closed",
+        "type": "PR",
+        "author": "divyansh42"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S06": {
+    "repo": "tektoncd/chains",
+    "issues_url": "https://github.com/tektoncd/chains/issues",
+    "count_inspected": 15,
+    "pr_count": 14,
+    "issue_count": 1,
+    "sample_items": [
+      {
+        "number": 2045,
+        "title": "chore(deps): bump google.golang.org/grpc from 1.83.1 to 1.83.2",
+        "url": "https://github.com/tektoncd/chains/pull/2045",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 2044,
+        "title": "fix(storage): use MessageSignature for OCI signature bundles",
+        "url": "https://github.com/tektoncd/chains/pull/2044",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "anithapriyanatarajan"
+      },
+      {
+        "number": 2043,
+        "title": "chore(deps): bump google.golang.org/grpc from 1.83.1 to 1.83.2",
+        "url": "https://github.com/tektoncd/chains/pull/2043",
+        "date": "2026-10-08",
+        "state": "closed",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 2042,
+        "title": "chore(deps): bump cloud.google.com/go/storage from 1.68.0 to 1.69.0",
+        "url": "https://github.com/tektoncd/chains/pull/2042",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "dependabot[bot]"
+      },
+      {
+        "number": 2041,
+        "title": "byProduct name change in SLSA provenance",
+        "url": "https://github.com/tektoncd/chains/pull/2041",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "ngelman1"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S07": {
+    "repo": "prometheus/client_python",
+    "issues_url": "https://github.com/prometheus/client_python/issues",
+    "count_inspected": 15,
+    "pr_count": 12,
+    "issue_count": 3,
+    "sample_items": [
+      {
+        "number": 1219,
+        "title": "Make mostrecent gauge tests independent of clock resolution",
+        "url": "https://github.com/prometheus/client_python/pull/1219",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "nischita44"
+      },
+      {
+        "number": 1218,
+        "title": "Allow make_asgi_app to be added as a Starlette/FastAPI route",
+        "url": "https://github.com/prometheus/client_python/pull/1218",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "bhaskargurram-ai"
+      },
+      {
+        "number": 1217,
+        "title": "Reject duplicate label names before metric registration",
+        "url": "https://github.com/prometheus/client_python/pull/1217",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "fhgffy"
+      },
+      {
+        "number": 1216,
+        "title": "Avoid parent lock for existing metric labelsets",
+        "url": "https://github.com/prometheus/client_python/pull/1216",
+        "date": "2026-10-08",
+        "state": "open",
+        "type": "PR",
+        "author": "skulitom"
+      },
+      {
+        "number": 1214,
+        "title": "Reject repeated histogram bucket bounds",
+        "url": "https://github.com/prometheus/client_python/pull/1214",
+        "date": "2026-10-04",
+        "state": "open",
+        "type": "PR",
+        "author": "chrikrah"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S08": {
+    "repo": "vllm-project/vllm",
+    "issues_url": "https://github.com/vllm-project/vllm/issues",
+    "count_inspected": 15,
+    "pr_count": 11,
+    "issue_count": 4,
+    "sample_items": [
+      {
+        "number": 60972,
+        "title": "[Misc] Break chat_utils into more maintainable modules.",
+        "url": "https://github.com/vllm-project/vllm/pull/60972",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "noooop"
+      },
+      {
+        "number": 60969,
+        "title": "[Bugfix][Reasoning] Return unfinished K2 Horizon reasoning as reasoning",
+        "url": "https://github.com/vllm-project/vllm/pull/60969",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "hpdkhoa"
+      },
+      {
+        "number": 60968,
+        "title": "[Bugfix][Tool Parser] Keep Step3 parameter values that contain '<'",
+        "url": "https://github.com/vllm-project/vllm/pull/60968",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "hpdkhoa"
+      },
+      {
+        "number": 60967,
+        "title": "[KV Cache] Size packed Mamba groups by the unpadded state",
+        "url": "https://github.com/vllm-project/vllm/pull/60967",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "lucamotz"
+      },
+      {
+        "number": 60966,
+        "title": "[Fast Start][Bugfix] Snapshot GPU memory after external weights are ready",
+        "url": "https://github.com/vllm-project/vllm/pull/60966",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "UNIDY2002"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S09": {
+    "repo": "kyverno/chainsaw",
+    "issues_url": "https://github.com/kyverno/chainsaw/issues",
+    "count_inspected": 15,
+    "pr_count": 12,
+    "issue_count": 3,
+    "sample_items": [
+      {
+        "number": 2771,
+        "title": "docs: clarify patch merge semantics",
+        "url": "https://github.com/kyverno/chainsaw/pull/2771",
+        "date": "2026-09-18",
+        "state": "open",
+        "type": "PR",
+        "author": "ANAMASGARD"
+      },
+      {
+        "number": 2770,
+        "title": "fix(operations): parse script/command stdout for declarative check/assert",
+        "url": "https://github.com/kyverno/chainsaw/pull/2770",
+        "date": "2026-09-16",
+        "state": "open",
+        "type": "PR",
+        "author": "ivomarino"
+      },
+      {
+        "number": 2769,
+        "title": "feat(expressions): support $name shorthand for bindings.resolve() in CEL",
+        "url": "https://github.com/kyverno/chainsaw/pull/2769",
+        "date": "2026-09-15",
+        "state": "open",
+        "type": "PR",
+        "author": "ivomarino"
+      },
+      {
+        "number": 2768,
+        "title": "fix: set classname to the test name in JUnit reports",
+        "url": "https://github.com/kyverno/chainsaw/pull/2768",
+        "date": "2026-09-14",
+        "state": "open",
+        "type": "PR",
+        "author": "ivomarino"
+      },
+      {
+        "number": 2767,
+        "title": "test: add unit test coverage for the trim_space JMESPath function",
+        "url": "https://github.com/kyverno/chainsaw/pull/2767",
+        "date": "2026-09-13",
+        "state": "open",
+        "type": "PR",
+        "author": "magic-peach"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S11": {
+    "repo": "mlflow/mlflow",
+    "issues_url": "https://github.com/mlflow/mlflow/issues",
+    "count_inspected": 15,
+    "pr_count": 11,
+    "issue_count": 4,
+    "sample_items": [
+      {
+        "number": 26614,
+        "title": "Prevent online scoring from exhausting the server job queue",
+        "url": "https://github.com/mlflow/mlflow/pull/26614",
+        "date": "2026-10-10",
+        "state": "open",
+        "type": "PR",
+        "author": "Copilot"
+      },
+      {
+        "number": 26613,
+        "title": "docs: fix `trace` import in the lightweight tracing SDK guide",
+        "url": "https://github.com/mlflow/mlflow/pull/26613",
+        "date": "2026-10-10",
+        "state": "closed",
+        "type": "PR",
+        "author": "shaikn6"
+      },
+      {
+        "number": 26612,
+        "title": "docs: fix trace import in the lightweight tracing SDK guide",
+        "url": "https://github.com/mlflow/mlflow/pull/26612",
+        "date": "2026-10-10",
+        "state": "closed",
+        "type": "PR",
+        "author": "shaikn6"
+      },
+      {
+        "number": 26610,
+        "title": "Skill registry: cover latest-version errors and default status in the SDK tests",
+        "url": "https://github.com/mlflow/mlflow/pull/26610",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "hmoghani"
+      },
+      {
+        "number": 26609,
+        "title": "Infer optional integer columns as double for list inputs",
+        "url": "https://github.com/mlflow/mlflow/pull/26609",
+        "date": "2026-10-09",
+        "state": "open",
+        "type": "PR",
+        "author": "lorenzozanee"
+      }
+    ],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  },
+  "S12": {
+    "repo": "kubernetes/client-go",
+    "issues_url": "https://github.com/kubernetes/client-go/issues",
+    "count_inspected": 0,
+    "pr_count": 0,
+    "issue_count": 0,
+    "sample_items": [],
+    "api_error": null,
+    "access_timestamp": "2026-10-10",
+    "status_note": "Actual GitHub API fetch; not fabricated; count reflects API response only (not padded)"
+  }
+}

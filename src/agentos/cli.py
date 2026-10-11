@@ -33,7 +33,12 @@ def _version_info() -> VersionInfo:
     try:
         pkg_version = metadata.version("agentos")
     except metadata.PackageNotFoundError:
-        pkg_version = "0.0.0+unknown"
+        # Fallback to module __version__ for editable installs
+        try:
+            import agentos as _agentos_pkg
+            pkg_version = getattr(_agentos_pkg, "__version__", "0.0.0+unknown")
+        except ImportError:
+            pkg_version = "0.0.0+unknown"
     return VersionInfo(
         package="agentos",
         version=pkg_version,
@@ -73,3 +78,10 @@ def main(
 def version() -> None:
     """Print the installed agentos version."""
     _print_version()
+
+
+from agentos.cli_sandbox import sandbox_app
+from agentos.cli_auditor import app_auditor
+
+app.add_typer(sandbox_app, name="sandbox")
+app.add_typer(app_auditor, name="auditor")

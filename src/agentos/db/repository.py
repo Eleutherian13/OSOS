@@ -5,8 +5,12 @@ from __future__ import annotations
 
 import uuid
 from collections.abc import Iterable
+from datetime import datetime
 
-import psycopg
+try:
+    import psycopg
+except ImportError:
+    psycopg = None  # type: ignore[misc,assignment]
 
 from .config import DatabaseConfig
 from .connection import Connection, Session, async_connection
@@ -66,7 +70,7 @@ class EventStore:
         if not events:
             return []
 
-        seen_ids: dict[Event, str] = {}
+        seen_ids: dict[str, str] = {}
         validated: list[Event] = []
         for event in events:
             normalized = event.normalize_for_insert()
@@ -80,9 +84,17 @@ class EventStore:
                     raise EventValidationError(
                         f"duplicate event id {event.id} within the same append"
                     )
-                seen_ids[normalized] = hex_id
+                seen_ids[hex_id] = hex_id
             validated.append(normalized)
 
+        is_sqlite = self._connection.config.dsn.startswith("sqlite:///")
+
+        # For SQLite, we need to generate versions in Python since there's no
+        # RETURNING clause support. Track max version per aggregate.
+        if is_sqlite:
+            return self._append_sqlite(validated, seen_ids)
+
+        # PostgreSQL path: use RETURNING to get generated values
         sql = """
             insert into event_store
                 (id, occurred_at, aggregate_type, aggregate_id, event_type,
@@ -112,40 +124,115 @@ class EventStore:
             rows = [dict(row) for row in cursor.fetchall()]
         return [_row_to_event(row, seen_ids) for row in rows]
 
+    def _append_sqlite(self, validated: list[Event], seen_ids: dict[str, str]) -> list[Event]:
+        """SQLite-specific append that generates versions in Python."""
+        sql = """
+            insert into event_store
+                (id, occurred_at, aggregate_type, aggregate_id, event_type,
+                 payload, payload_schema, version, source)
+            values
+                (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """
+        with Session(self._connection) as cursor:
+            # Get current max version per aggregate
+            agg_versions: dict[str, int] = {}
+            for event in validated:
+                agg_id = _hex_id(event.aggregate_id)
+                if agg_id not in agg_versions:
+                    cursor.execute(
+                        "select max(version) as max_ver from event_store where aggregate_id = ?",
+                        (agg_id,),
+                    )
+                    row = cursor.fetchone()
+                    agg_versions[agg_id] = row["max_ver"] if row and row["max_ver"] is not None else 0
+
+            rows: list[dict] = []
+            for event in validated:
+                agg_id = _hex_id(event.aggregate_id)
+                version = agg_versions[agg_id] + 1
+                agg_versions[agg_id] = version
+                row: dict = {
+                    "id": _hex_id(event.id),
+                    "occurred_at": _serialize_timestamp(event.occurred_at),
+                    "aggregate_type": event.aggregate_type,
+                    "aggregate_id": agg_id,
+                    "event_type": event.event_type,
+                    "payload": _serialize_payload(event.payload),
+                    "payload_schema": event.payload_schema,
+                    "version": version,
+                    "source": event.source,
+                }
+                rows.append(row)
+
+            # Insert using executemany
+            cursor.executemany(sql, [(r["id"], r["occurred_at"], r["aggregate_type"],
+                                     r["aggregate_id"], r["event_type"], r["payload"],
+                                     r["payload_schema"], r["version"], r["source"])
+                                    for r in rows])
+
+            # Fetch inserted rows and return in original order
+            ids = [r["id"] for r in rows]
+            placeholders = ",".join("?" * len(ids))
+            cursor.execute(
+                f"select id, occurred_at, aggregate_type, aggregate_id, event_type,"
+                f" payload, payload_schema, version, source from event_store"
+                f" where id in ({placeholders})",
+                ids,
+            )
+            fetched_rows = {row["id"]: row for row in cursor.fetchall()}
+            # Return in original input order
+            result_rows = []
+            for r in rows:
+                if r["id"] in fetched_rows:
+                    result_rows.append(fetched_rows[r["id"]])
+            return [_row_to_event(row, seen_ids) for row in result_rows]
+
     def get(self, event_id: str | uuid.UUID) -> Event | None:
         """Fetch a single event by id."""
         with Session(self._connection) as cursor:
-            cursor.execute(
+            sql = (
                 "select id, occurred_at, aggregate_type, aggregate_id, event_type,"
                 " payload, payload_schema, version, source from event_store"
-                " where id = %s",
-                (_hex_id(event_id),),
+                " where id = %s"
             )
+            if self._connection.config.dsn.startswith("sqlite:///"):
+                sql = sql.replace("%s", "?")
+                cursor.execute(sql, (_hex_id(event_id),))
+            else:
+                cursor.execute(sql, (_hex_id(event_id),))
             row = cursor.fetchone()
             return _row_to_event(row, {}) if row else None
 
     def list_by_aggregate(self, aggregate_type: str, aggregate_id: str | uuid.UUID) -> list[Event]:
         """Fetch all events for an aggregate, ordered by version (deterministic)."""
         with Session(self._connection) as cursor:
-            cursor.execute(
+            sql = (
                 "select id, occurred_at, aggregate_type, aggregate_id, event_type,"
                 " payload, payload_schema, version, source from event_store"
                 " where aggregate_type = %s and aggregate_id = %s"
-                " order by version",
-                (aggregate_type, _hex_id(aggregate_id)),
+                " order by version"
             )
+            if self._connection.config.dsn.startswith("sqlite:///"):
+                sql = sql.replace("%s", "?")
+                cursor.execute(sql, (aggregate_type, _hex_id(aggregate_id)))
+            else:
+                cursor.execute(sql, (aggregate_type, _hex_id(aggregate_id)))
             rows = [dict(row) for row in cursor.fetchall()]
         return [_row_to_event(row, {}) for row in rows]
 
     def list_chronological(self, limit: int = 100) -> list[Event]:
         """Fetch the most recent events in deterministic order."""
         with Session(self._connection) as cursor:
-            cursor.execute(
+            sql = (
                 "select id, occurred_at, aggregate_type, aggregate_id, event_type,"
                 " payload, payload_schema, version, source from event_store"
-                " order by version desc, occurred_at desc limit %s",
-                (limit,),
+                " order by version desc, occurred_at desc limit %s"
             )
+            if self._connection.config.dsn.startswith("sqlite:///"):
+                sql = sql.replace("%s", "?")
+                cursor.execute(sql, (limit,))
+            else:
+                cursor.execute(sql, (limit,))
             rows = [dict(row) for row in cursor.fetchall()]
         return [_row_to_event(row, {}) for row in rows]
 
@@ -217,13 +304,17 @@ def _deserialize_timestamp(value: str | datetime) -> datetime:
 
 
 def _serialize_payload(payload: dict) -> str:
-    return Event.model_validate({"payload": payload}).model_dump_json()
+    """Serialize a payload dict to JSON string."""
+    import json
+    return json.dumps(payload, separators=(",", ":"))
 
 
 def _deserialize_payload(value: str | dict) -> dict:
+    """Deserialize a payload from JSON string or dict."""
+    import json
     if isinstance(value, dict):
         return value
-    return Event.model_validate({"payload": value}).model_dump()["payload"]
+    return json.loads(value)
 
 
 def _hex_id(identifier: str | uuid.UUID) -> str:

@@ -1,0 +1,29 @@
+organization_slug: open-os-demo
+program: OSS-AgentOS v2.1 policy registry
+version: "2.1"
+
+sources:
+  - id: src-policy-01
+    url: https://example.org/policy/ai-use
+    excerpt: "AI assistance permitted for understanding and code review; autonomous execution requires human review."
+    status: PENDING_BASELINE
+
+policy:
+  proposal_text: BLOCKED
+  proposal_estimate: ASSIST_ONLY
+  code: ASSIST_ONLY
+  understanding_aid: ALLOWED
+  autonomous_agents: BLOCKED
+  comms_text: BLOCKED
+
+disclosure_required: true
+
+contact:
+  channel: public-forum
+  direct_messages_welcome: false
+  quote: "Use the public forum; do not DM maintainers."
+  source_ref: src-policy-01
+
+human_confirmed: false
+reconfirmation_needed: true
+reconfirmation_reason: "Policy sources have not been read and confirmed by operator."
