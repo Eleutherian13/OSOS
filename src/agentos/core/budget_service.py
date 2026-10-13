@@ -21,8 +21,17 @@ class BudgetService:
     def usage_for_period(self, agent: str, now: datetime | None = None) -> Decimal:
         if self.db is None:
             return Decimal("0")
-        # Would query V007 + spend records over rolling 30d window (period_window)
-        return Decimal("0")
+        # Read V007 budget aggregate over rolling 30-day window (period_start >= now-30d)
+        s, e = period_window(now)
+        try:
+            rows = self.db.fetchall(
+                "SELECT SUM(spent) as total FROM budget WHERE agent=? AND period_start >= ? AND period_start <= ?",
+                (agent, s.date().isoformat(), e.date().isoformat()),
+            )
+            total = Decimal(str(rows[0]["total"] or 0)) if rows else Decimal("0")
+            return total
+        except Exception:
+            return Decimal("0")
 
     def compute_cost(self, input_t: int | None, output_t: int | None,
                      cached_t: int | None) -> Decimal:
@@ -40,13 +49,33 @@ class BudgetService:
         return cost
 
     def persist_usage(self, agent: str, alias: str, record: SpendRecord) -> dict:
-        # 2.5/2.6: idempotency via record.idempotency_key; tx with aggregate;
-        # 2.7: if persistence fails, expose failure, do not claim durable success,
-        # do not auto-retry, preserve safe diagnostics.
         if self.db is None:
             return {"status": "pending", "reason": "db_unavailable", "idempotency_key": record.idempotency_key}
-        # Transactional update of V007 aggregate + append-only event_store (V001)
-        return {"status": "recorded", "idempotency_key": record.idempotency_key, "cost": record.cost_actual or record.cost_estimate}
+        # Transactional: V007 aggregate update + append-only event_store (V001) event
+        # For SQLite adapter via Connection (handles param conversion)
+        try:
+            # Aggregate update (rolling window by period_start date)
+            today = record.occurred_at.date() if hasattr(record.occurred_at, "date") else datetime.now(timezone.utc).date()
+            self.db.execute(
+                "INSERT OR IGNORE INTO budget (id, period_start, agent, cap, spent) VALUES (?, ?, ?, ?, ?)",
+                (str(record.id), str(today), agent, float(self.cfg.total_cap), 0.0),
+            )
+            # Update spent (add cost_actual or cost_estimate)
+            cost = float(record.cost_actual or record.cost_estimate or Decimal("0"))
+            self.db.execute(
+                "UPDATE budget SET spent = spent + ?, updated_at = datetime('now') WHERE period_start = ? AND agent = ?",
+                (cost, str(today), agent),
+            )
+            # Event record (append-only)
+            self.db.execute(
+                "INSERT INTO event_store (id, aggregate_type, aggregate_id, event_type, payload, payload_schema) VALUES (?, ?, ?, ?, ?, ?)",
+                (str(record.id), "budget", agent, "budgets_spent", '{"agent":"'+agent+'","period":"'+str(today)+'","cost":'+str(cost)+'}', "1.0"),
+            )
+            self.db.commit()
+            return {"status": "recorded", "idempotency_key": record.idempotency_key, "cost": record.cost_actual or record.cost_estimate}
+        except Exception as exc:
+            self.db.rollback()
+            return {"status": "failed", "reason": str(exc), "idempotency_key": record.idempotency_key}
 
     def decision(self, agent: str, now: datetime | None = None) -> dict:
         cap = self.applicable_cap(agent)

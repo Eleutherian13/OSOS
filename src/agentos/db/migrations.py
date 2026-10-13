@@ -144,6 +144,19 @@ def run(config: DatabaseConfig, migrations_dir: Path | None = None) -> list[str]
                 if migration.sequence in installed:
                     continue
                 raw_sql = migration.path.read_text(encoding="utf-8")
+                # Check if the file has a MIGRATION variable
+                if "MIGRATION = " in raw_sql:
+                    # Extract the MIGRATION variable content
+                    import ast
+                    # Find the MIGRATION assignment
+                    match = re.search(r'MIGRATION\s*=\s*"""(.*?)"""', raw_sql, re.DOTALL)
+                    if match:
+                        raw_sql = match.group(1)
+                    else:
+                        # Fallback: try single quotes
+                        match = re.search(r"MIGRATION\s*=\s*\'\'\ '(.*?)\'\'\ '", raw_sql, re.DOTALL)
+                        if match:
+                            raw_sql = match.group(1)
                 if is_sqlite:
                     sql = _port_for_sqlite(raw_sql, migration.name)
                 else:

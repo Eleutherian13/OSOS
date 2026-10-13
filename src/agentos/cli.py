@@ -82,6 +82,10 @@ def version() -> None:
 
 from agentos.cli_sandbox import sandbox_app
 from agentos.cli_auditor import app_auditor
+from agentos.cli_path import app_path
 
 app.add_typer(sandbox_app, name="sandbox")
 app.add_typer(app_auditor, name="auditor")
+from agentos.cli_issue_hunter import app_issues
+app.add_typer(app_issues, name="issues")
+app.add_typer(app_path, name="path")

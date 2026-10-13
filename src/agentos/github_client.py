@@ -8,10 +8,31 @@ import os, time, hashlib
 from typing import Literal
 import requests
 
+# Prompt 2 freeze (PHASE_5_PROMPT1): typed outcome contract; read-only only; token redacted
+class GitHubReadOnlyOutcome:
+    SUCCESS = "SUCCESS"
+    CACHED_304 = "CACHED_304"
+    NO_RECORDS = "NO_RECORDS"
+    RATE_LIMITED = "RATE_LIMITED"
+    PERMISSION_DENIED = "PERMISSION_DENIED"
+    AUTH_UNAVAILABLE = "AUTH_UNAVAILABLE"
+    TRANSIENT = "TRANSIENT"
+    RETRY_EXHAUSTED = "RETRY_EXHAUSTED"
+    MALFORMED = "MALFORMED"
+
 class GitHubClient:
-    def __init__(self, token: str | None = None):
+    def __init__(self, token: str | None = None, clock=None, cache_path: str | None = None):
         self.token = token or os.environ.get("GITHUB_TOKEN")
         self.source = "github-readonly"
+        self._clock = clock or time.time
+        self.cache_path = cache_path
+        self.cache = {}
+        if cache_path and __import__('os').path.exists(cache_path):
+            try:
+                import json
+                self.cache = json.load(open(cache_path, encoding="utf-8"))
+            except Exception:
+                self.cache = {}
         self._session = requests.Session()
         self._session.headers.update({
             "Accept": "application/vnd.github+json",
@@ -77,11 +98,19 @@ class GitHubClient:
                     return {"status": "RATE_LIMITED", "reason": "429", "retry_after": retry_after, "url": url, "read_only": True, "upstream_write_attempted": False}
                 resp.raise_for_status()
                 data = resp.json()
-                # Store snapshot (hash, etag)
+                # Store snapshot (hash, etag) — idempotent
                 body_str = resp.text
+                # Token redaction: never include token text in any returned payload
                 h = hashlib.sha256(body_str.encode("utf-8")).hexdigest()[:32]
                 self.cache[url] = {"etag": resp.headers.get("ETag"), "content_hash": h,
-                                   "body": body_str, "ts": time.time(), "status": "NEW_OR_UPDATED"}
+                                   "body": body_str, "ts": self._clock(), "status": "NEW_OR_UPDATED"}
+                if self.cache_path:
+                    try:
+                        import json
+                        with open(self.cache_path, "w", encoding="utf-8") as f:
+                            json.dump(self.cache, f)
+                    except Exception:
+                        pass
                 # Evidence event (existing event vocabulary; not redundant writes for unchanged)
                 return {"status": "NEW_OR_UPDATED", "snapshot_hash": h, "url": url,
                         "items": data if isinstance(data, list) else [data],
@@ -100,5 +129,8 @@ class GitHubClient:
                 backoff *= 2
             except Exception as e:
                 return {"status": "INVALID_RESPONSE", "reason": str(e), "url": url, "source": self.source, "read_only": True, "upstream_write_attempted": False}
-        return {"status": "FAILED", "reason": last_err or "retry_exhausted", "url": url,
-                "retries": max_retry, "source": self.source, "read_only": True, "upstream_write_attempted": False}
+        # Redact any accidental token leakage from error payload (defense)
+        safe_reason = (last_err or "retry_exhausted").replace(self.token or "", "***REDACTED***") if isinstance(last_err, str) else (last_err or "retry_exhausted")
+        return {"status": "FAILED", "reason": safe_reason, "url": url,
+                "retries": max_retry, "source": self.source, "read_only": True, "upstream_write_attempted": False,
+                "token_present": bool(self.token)}

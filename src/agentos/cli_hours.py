@@ -28,6 +28,24 @@ def cmd_hours(args: list[str]) -> int:
         print("Hours must be positive finite number", file=sys.stderr)
         return 2
     # Persistence (reuses hours_log table created V008)
-    HoursEntry(agent="default", category=category, hours=h)  # persisted via DB layer
-    print(f"Recorded {category} hours: {h}")
+    try:
+        import os
+        dsn = os.environ.get("AGENTOS_DB_PATH") or os.environ.get("DATABASE_URL")
+        if dsn:
+            from agentos.db.config import DatabaseConfig
+            from agentos.db.connection import Connection, Session
+            cfg = DatabaseConfig.from_url(dsn) if dsn.startswith("sqlite:///") else DatabaseConfig.from_env()
+            conn = Connection(cfg)
+            with Session(conn) as c:
+                c.execute(
+                    "INSERT INTO hours_log (id, agent, category, hours, recorded_at) VALUES (lower(hex(randomblob(16))), ?, ?, ?, datetime('now'))",
+                    ("default", category, float(h)),
+                )
+            print(f"Recorded {category} hours: {h} (persisted)")
+        else:
+            HoursEntry(agent="default", category=category, hours=h)
+            print(f"Recorded {category} hours: {h} (pending DB)")
+    except Exception as exc:
+        HoursEntry(agent="default", category=category, hours=h)
+        print(f"Recorded {category} hours: {h} (persist error: {exc})")
     return 0
