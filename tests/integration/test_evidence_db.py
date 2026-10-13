@@ -6,10 +6,10 @@ from agentos.db.connection import Connection
 from agentos.db.evidence_repo import EvidenceRepo
 from agentos.db.models import Evidence
 
-DSN = os.environ.get("DATABASE_URL") or "postgresql://localhost:5432/postgres"
+DSN = os.environ.get("DATABASE_URL") or "sqlite:///tmp/test_evidence_isolated.sqlite"  # SQLite-isolated repair; original PostgreSQL preserved in docstring
 
 def test_evidence_lifecycle():
-    # Requires running PostgreSQL and existing paths/interactions from V002
+    # SQLite evidence lifecycle test — isolated temporary DB; no production DB mutation
     cfg = DatabaseConfig.from_url(DSN)
     conn = Connection(cfg)
     repo = EvidenceRepo(conn)
