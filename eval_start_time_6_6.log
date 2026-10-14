@@ -1,0 +1,5 @@
+P7 EXEC 6/6 SUSTAINED 40-CASE EVALUATION STARTED
+Start time: 1791911936.968081
+Adapter source verified: urllib to endpoint; safe exception; read-only; no tool binding
+Endpoint: 127.0.0.1:11434 open; model qwen2.5:7b
+Corpus: 40 cases; hash 9c01d399c494b842bab9654998f436f5; version v1-canonical-2026-10-13

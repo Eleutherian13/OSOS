@@ -1,0 +1,9 @@
+{
+  "progress_case": 40,
+  "total_cases": 40,
+  "results_so_far": 40,
+  "last_status": "FAIL_SAFE",
+  "last_id": "INJ-040",
+  "elapsed_total_sec": 805.691,
+  "corpus_hash": "9c01d399c494b842bab9654998f436f5"
+}
