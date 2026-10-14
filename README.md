@@ -16,7 +16,7 @@ The system is **not** generic automation. It does not generate mentor replies, f
 - **Level 16 (Proposal Evidence Auditor — Design A):** scoped implementation verified (`auditor_service.py` + 17 synthetic tests); **real-data E2E BLOCKED** (proposal/idea/hours/evidence inputs missing); **Design B deferred** (separate authorization, dataset, method).
 - **P7 (security / injection / provenance):** accepted (`docs/P7_FINAL_ACCEPTANCE.md`); live endpoint audit preserved separately; `act=OFF` enforced.
 - **G1 (historical evaluation):** `FAIL` preserved; `G1_OVERRIDE_AUTHORIZED` permits continued development — **not a pass, not a prohibition**.
-- **Phase 9 hardening:** accepted (P9-1 migration/recovery, P9-2 regression, P9-3 static/safety, P9-4 integrated V0, P9-5 status, P9-6 blocker triage, P9-7 final reconciliation).
+- **Phase 9 hardening:** evidence-backed progress completed (E702 repaired; P7/DB verified; blocker ledger reconciled); external/owner-blocked evaluations (L9 benchmark / L10-L12 evaluator / L16 real E2E / L14 trigger) remain blocked by missing prerequisites — documented in `docs/PHASE_9_CANONICAL_STATUS_MATRIX.md` + `BLOCKER_LEDGER.md`. See `docs/SMART_GATE_RECOVERY_FINAL_REPORT.md` (4/4 index) and `docs/SMART_GATE_E702_REPAIR_REPORT.md` / `SMART_GATE_P7_SQLITE_VERIFICATION.md` for evidence.
 
 **The design philosophy:** never fabricate evidence, never substitute synthetic for real, and always separate what the code does from what has been accepted by human evidence.
 
