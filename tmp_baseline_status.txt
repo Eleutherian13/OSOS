@@ -1,0 +1,25 @@
+ M README.md
+ M src/agentos/core/auditor_service.py
+?? docs/PHASE_8_BASELINE_2026-10-14.md
+?? docs/PHASE_8_FINAL_ACCEPTANCE.md
+?? docs/PHASE_9_BLOCKER_LEDGER.md
+?? docs/PHASE_9_CANONICAL_STATUS_MATRIX.md
+?? docs/PHASE_9_ENTRY_CHECKLIST.md
+?? docs/PHASE_9_EXECUTION_PLAN_CORRECTION.md
+?? docs/PHASE_9_FINAL_ACCEPTANCE.md
+?? docs/PHASE_9_FINAL_RECONCILIATION_APPEND.md
+?? docs/PHASE_9_INTEGRATED_V0_LOG.md
+?? docs/PHASE_9_MIGRATION_RECOVERY_LOG.md
+?? docs/PHASE_9_REGRESSION_REPORT.md
+?? docs/PHASE_9_STATIC_CONFIG_SECURITY_REPORT.md
+?? docs/README_VERIFICATION_REPORT.md
+?? tests/test_auditor_input_validation.py
+?? tests/test_auditor_output_contract.py
+?? tmp/p9_disposable.sqlite
+?? tmp/p9_fresh.sqlite
+?? tmp_baseline_status.txt
+?? tmp_p9_collect_auditor.txt
+?? tmp_p9_inspect.py
+?? tmp_p9_migrate_fresh.py
+?? tmp_p9_migration_output.txt
+?? tmp_p9_regression_summary.txt

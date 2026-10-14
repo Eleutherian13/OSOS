@@ -32,7 +32,8 @@ def _base(action_class="L0", org="o1") -> GuardInput:
 
 
 def test_kill_epoch_mismatch():
-    inp = _base(); inp.kill.epoch = 99
+    inp = _base()
+    inp.kill.epoch = 99
     res = guard_check(inp)
     assert res["decision"] == "DENY"
     assert "kill_epoch_mismatch" in str(res["reasons"])
@@ -45,19 +46,22 @@ def test_kill_epoch_current():
 
 
 def test_kill_epoch_unknown_source():
-    inp = _base(); inp.kill.source = "unknown"
+    inp = _base()
+    inp.kill.source = "unknown"
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "kill_epoch_unknown" in str(res["reasons"])
 
 
 def test_disallowed_mode():
-    inp = _base("L2"); inp.registry.effective_mode = "OBSERVE"
+    inp = _base("L2")
+    inp.registry.effective_mode = "OBSERVE"
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "mode_denied" in str(res["reasons"])
 
 
 def test_policy_surface_blocked():
-    inp = _base("L0"); inp.registry.effective_mode = "BLOCKED"  # via policy
+    inp = _base("L0")
+    inp.registry.effective_mode = "BLOCKED"  # via policy
     # Mode evaluation treats BLOCKED via conservative unknown
     # But we set effective_mode directly; with unknown behavior, it blocks.
     # We'll test via needs_reconfirm / stale registry for policy block below.
@@ -65,64 +69,75 @@ def test_policy_surface_blocked():
 
 
 def test_unknown_policy():
-    inp = _base(); inp.registry.effective_mode = "UNKNOWN"
+    inp = _base()
+    inp.registry.effective_mode = "UNKNOWN"
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "mode_unknown" in str(res["reasons"])
 
 
 def test_stale_registry():
-    inp = _base(); inp.registry.fresh = False
+    inp = _base()
+    inp.registry.fresh = False
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "registry_stale" in str(res["reasons"])
 
 
 def test_reconfirmation_required():
-    inp = _base(); inp.registry.needs_reconfirm = True
+    inp = _base()
+    inp.registry.needs_reconfirm = True
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "reconfirm" in str(res["reasons"])
 
 
 def test_caps_evaluated_for_l2():
     # Cap rules only apply to relevant actions (L3). L2 passes caps.
-    inp = _base("L2"); inp.caps.public_messages_this_week = 4
+    inp = _base("L2")
+    inp.caps.public_messages_this_week = 4
     res = guard_check(inp)
     assert res["decision"] == "ALLOW"
     assert "caps" in res["rules_evaluated"]
 
 
 def test_claim_slot_evaluated_for_l2():
-    inp = _base("L2"); inp.caps.active_claims = 2
+    inp = _base("L2")
+    inp.caps.active_claims = 2
     res = guard_check(inp)
     assert res["decision"] == "ALLOW"
     assert "claim_slot" in res["rules_evaluated"]
 
 
 def test_open_pr_limit_reached():
-    inp = _base("L2"); inp.caps.open_prs = 2
+    inp = _base("L2")
+    inp.caps.open_prs = 2
     res = guard_check(inp)
     assert "caps" in res["rules_evaluated"]
 
 
 def test_unknown_contact_channel():
-    inp = _base("L2"); inp.contact.known = False
+    inp = _base("L2")
+    inp.contact.known = False
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "unknown" in str(res["reasons"])
 
 
 def test_dm_not_welcome():
-    inp = _base("L2"); inp.contact.channel = "DM"; inp.contact.dm_permitted = False
+    inp = _base("L2")
+    inp.contact.channel = "DM"
+    inp.contact.dm_permitted = False
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "dm_not_permitted" in str(res["reasons"])
 
 
 def test_budget_exceeded():
-    inp = _base("L2"); inp.budget = BudgetStatus(applicable=True, within_budget=False, reason="over")
+    inp = _base("L2")
+    inp.budget = BudgetStatus(applicable=True, within_budget=False, reason="over")
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "budget_exceeded" in str(res["reasons"])
 
 
 def test_budget_unknown():
-    inp = _base("L2"); inp.budget = BudgetStatus(applicable=True, within_budget=None)
+    inp = _base("L2")
+    inp.budget = BudgetStatus(applicable=True, within_budget=None)
     res = guard_check(inp)
     assert res["decision"] == "DENY" and "budget_unknown" in str(res["reasons"])
 
@@ -151,7 +166,10 @@ def test_l4_automatic_action_denial():
 def test_ordering_conflicting_conditions_first_decisive():
     # Kill bad + budget bad + caps reached — kill should win first.
     inp = _base("L3")
-    inp.kill.epoch = 7; inp.caps.public_messages_this_week = 99; inp.budget.within_budget = False; inp.budget.applicable = True
+    inp.kill.epoch = 7
+    inp.caps.public_messages_this_week = 99
+    inp.budget.within_budget = False
+    inp.budget.applicable = True
     res = guard_check(inp)
     assert res["decision"] == "DENY"
     assert "kill_epoch" in res["rules_evaluated"] and res["rules_evaluated"][0] == "kill_epoch"
